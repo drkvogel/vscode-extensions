@@ -31,3 +31,5 @@ auto-linkify on paste into vscode?
 
 ## done
 
+2019-04-21 23:35:32
+bound `linkify` command to `shift+cmd+i`

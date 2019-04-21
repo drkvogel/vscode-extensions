@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
-const _ = require('lodash');
+// const _ = require('lodash');
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -49,7 +49,7 @@ function activate(context) {
 		replace selection...
 		*/
 
-		/*
+/* sample text for testing:
 asdfafd
 	asdfafd
 		asdfasdf(http)
@@ -65,16 +65,18 @@ asdfafd
 			let linkStart = line.indexOf('(http');
 			if (-1 != linkStart) {
 				let newline = line.replace(/[\[|\]]/g, ''); // remove square brackets
+				newline = newline.replace(/ - Google Search /g, '');
+				newline = newline.replace(/ - YouTube /g, '');
+				newline = newline.replace(/ - chrisjbird@gmail.com - Gmail /g, '');
 				linkStart = newline.indexOf('(http'); // as chars might have been removed
 				newline = newline.substring(0, linkStart) + ']' + newline.substring(linkStart);
-				newline = newline.trim();
+				newline = '[' + newline.trim();
 				newlines.push(newline);
 				console.log('newline: ' + newline);
 			}
 		})
 
-		// var newText = "asfasfdadfa";
-		var newText = newlines.join('\n');
+		let newText = newlines.join('\n');
 		editor.edit(builder => builder.replace(selection, newText)); // replace the selection
 	});
 
