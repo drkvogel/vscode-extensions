@@ -21,7 +21,16 @@ function activate(context) {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from Linkify!');
+		// vscode.window.showInformationMessage('Hello World from Linkify!');
+
+		// vscode.workspace.textDocuments.forEach(function(item, index) {
+		// 	console.log('item: '+JSON.stringify(item)+", index: "+index);
+		// })
+
+		const editor = vscode.window.activeTextEditor; 
+		var selection = editor.selection; 
+		var text = editor.document.getText(selection);
+		console.log('text: ' + text);
 	});
 
 	context.subscriptions.push(disposable);
