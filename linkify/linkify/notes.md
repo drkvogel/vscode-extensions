@@ -24,6 +24,17 @@ foreach line that has `(http` in it:
     remove everything the rest
 etc
 
+```js
+/* sample text for testing:
+asdfafd
+	asdfafd
+		asdfasdf(http)
+		asdfafd
+		[asd]fds (https://asdfasdfds)
+[asd]fds    (https://asdfasdfds)
+		sdf
+*/
+```
 
 ## defer
 

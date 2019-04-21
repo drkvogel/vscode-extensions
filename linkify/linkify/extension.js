@@ -33,46 +33,25 @@ function activate(context) {
 		var text = editor.document.getText(selection);
 		// console.log('text: ' + text);
 
-		// take out [] brackets, ` - YouTube`, ` - Google Search` etc
-		// take out e.g. `(21) ` from YouTube
-		// linkify - take out extra []
-
-		/* 
-		foreach line that has `(http` in it:
-			trim whitespace
-			remove ` - Google Search ` etc
-			add square brackets
-			if it has `https://www.google.com/search?`:
-				remove everything until `oq=`
-				remove everything the rest
-		etc
-		replace selection...
-		*/
-
-/* sample text for testing:
-asdfafd
-	asdfafd
-		asdfasdf(http)
-		asdfafd
-		[asd]fds (https://asdfasdfds)
-[asd]fds    (https://asdfasdfds)
-		sdf
-*/
 		let lines = text.split('\n');
 		let newlines = [];
 		lines.forEach(function(line) {
 			console.log('orig: ' + line);
 			let linkStart = line.indexOf('(http');
 			if (-1 != linkStart) {
-				let newline = line.replace(/[\[|\]]/g, ''); // remove square brackets
-				newline = newline.replace(/ - Google Search /g, '');
-				newline = newline.replace(/ - YouTube /g, '');
-				newline = newline.replace(/ - chrisjbird@gmail.com - Gmail /g, '');
-				linkStart = newline.indexOf('(http'); // as chars might have been removed
-				newline = newline.substring(0, linkStart) + ']' + newline.substring(linkStart);
-				newline = '[' + newline.trim();
-				newlines.push(newline);
-				console.log('newline: ' + newline);
+				let nl = line.replace(/[\[|\]]/g, ''); // remove square brackets
+				nl = nl.replace(/ - Google Search /g, '');
+				nl = nl.replace(/ - YouTube /g, '');
+				nl = nl.replace(/ - chrisjbird@gmail.com - Gmail /g, '');
+				// TODO take out e.g. `(21) ` from YouTube
+				// TODO   if it has `https://www.google.com/search?`:
+					// remove everything until `oq=`
+					// remove everything the rest
+				linkStart = nl.indexOf('(http'); // as chars might have been removed
+				nl = nl.substring(0, linkStart) + ']' + nl.substring(linkStart);
+				nl = '[' + nl.trim();
+				newlines.push(nl);
+				console.log('newline: ' + nl);
 			}
 		})
 
