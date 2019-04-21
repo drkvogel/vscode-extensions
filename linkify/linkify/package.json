@@ -1,7 +1,7 @@
 {
 	"name": "linkify",
-	"displayName": "linkify",
-	"description": "todo",
+	"displayName": "Linkify",
+	"description": "Format links copied from Tabs Outliner for Markdown",
 	"publisher": "Chris Bird",
 	"version": "0.0.1",
 	"engines": {
@@ -11,13 +11,13 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:extension.linkify"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [{
-            "command": "extension.helloWorld",
-			"title": "Hello World"
+            "command": "extension.linkify",
+			"title": "Linkify"
 		}]
 	},
 	"scripts": {
