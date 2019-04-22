@@ -3,7 +3,9 @@ javascript extension created with yo code
 
 # linkify README
 
-This is the README for your extension "linkify". After writing up a brief description, we recommend including the following sections.
+## todo
+
+After writing up a brief description, we recommend including the following sections.
 
 ## Features
 
