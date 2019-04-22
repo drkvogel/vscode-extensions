@@ -52,6 +52,10 @@ function activate(context) {
 				nl = '[' + nl.trim();
 				newlines.push(nl);
 				console.log('newline: ' + nl);
+			} else {
+				if (line != 'Window') {
+					newlines.push(line);
+				}
 			}
 		})
 
