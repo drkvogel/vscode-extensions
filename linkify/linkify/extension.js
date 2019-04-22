@@ -57,6 +57,8 @@ function activate(context) {
 
 		let newText = newlines.join('\n');
 		editor.edit(builder => builder.replace(selection, newText)); // replace the selection
+
+		vscode.window.showInformationMessage('Linkified!');
 	});
 
 	context.subscriptions.push(disposable);
