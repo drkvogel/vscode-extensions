@@ -2,7 +2,7 @@
 	"name": "linkify",
 	"displayName": "Linkify",
 	"description": "Format links copied from Tabs Outliner for Markdown",
-	"publisher": "Chris Bird",
+	"publisher": "drkvogel",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.32.0"
